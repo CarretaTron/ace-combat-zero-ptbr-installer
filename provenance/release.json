@@ -1,0 +1,35 @@
+{
+  "version": "010",
+  "release_file": "AC0 PT-BR.exe",
+  "bytes": 530076672,
+  "sha256": "3b1f91be236963001812f1e572c10a091395549d4812b47e97625901ef3f6715",
+  "built_at": "2026-11-07T17:42:29.3221147-03:00",
+  "source_sha256": {
+    "BufferedControls.cs": "fd4f46d32a467de61e1aa0cf71edcfc8228e3f8f9d5baa5201e63ce718fdff52",
+    "FolderPicker.cs": "2ecb6564272f083a3dda253d26e3d6ac56ecd1a3520c0037957bb66fdc8a8b69",
+    "InstallerDialogs.cs": "78deeeff54632b93cbe9562897403029ee056a389939d08ce3f39b51c44ed6ea",
+    "InstallerEngine.cs": "11b622ebd10829bd736a246ed4584fb948f9e8e4bba8b05410097cfca69e65aa",
+    "InstallerForm.cs": "921ef2a010ce28c646d137c6697e95d37dbd41e5cdfcae019c29884ee3dae34c",
+    "Program.cs": "f04e7e637154aab336a93350c3c8beca961945e7274099ad50eb792426a383e3",
+    "app.manifest": "57991e80214307a5bb1bd55182b8bbe12373e197f8e74a405e36d675457638c1",
+    "installer.ico": "19e9c0308da64b6ff008763de49f469e909ae83942970edd8566746edfb18887",
+    "titulo.png": "6c9e9bf8029d02e123350c974f6da05dc97d54b560f600d22f27ac1faecbf0ac",
+    "banner.jpg": "f52056fc31b5bcc0ed198d790642341bca0a350c6886a2130ff117d1b962e29c"
+  },
+  "payload_verification": {
+    "ok": true,
+    "version": "010",
+    "files": [
+      {
+        "name": "a.arc",
+        "length": 503289520,
+        "sha256": "2c70265e4cd341a543e1b763eb47209042777840204abf656e25c7b858328728"
+      },
+      {
+        "name": "d.arc",
+        "length": 25933952,
+        "sha256": "b63cd15db58416055ed728e7f5d6039d57d33ebf1aeb9839e6e033dbb21b12d1"
+      }
+    ]
+  }
+}

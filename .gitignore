@@ -1,0 +1,14 @@
+/build/
+/dist/
+/payload/
+/tests/fixture/
+/tests/runs_*/
+/tests/execucao_*/
+/tests/diretorios_*/
+/tests/result_*.json
+/tests/resultado_*.json
+*.exe
+*.dll
+*.pdb
+*.arc
+__pycache__/

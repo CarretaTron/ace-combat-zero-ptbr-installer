@@ -1,0 +1,36 @@
+{
+  "verified_on": "2026-11-08",
+  "release_file": "AC0 PT-BR.exe",
+  "release_sha256": "3b1f91be236963001812f1e572c10a091395549d4812b47e97625901ef3f6715",
+  "recorded_source_and_asset_hashes_checked": 10,
+  "release_source_hashes_match": true,
+  "independent_build_succeeded": true,
+  "managed_methods_compared": 173,
+  "managed_method_bodies_match": true,
+  "managed_resources_compared": 5,
+  "managed_resources_match": true,
+  "complete_pe_byte_identity_checked": false,
+  "integration_tests": [
+    {
+      "variant": "normal",
+      "total": 33,
+      "failed": 0
+    },
+    {
+      "variant": "corrupt",
+      "total": 2,
+      "failed": 0
+    },
+    {
+      "variant": "truncated",
+      "total": 2,
+      "failed": 0
+    }
+  ],
+  "directory_validation": {
+    "status": "passed",
+    "total": 8,
+    "rejected_directories_left_unchanged": true
+  },
+  "actual_game_installation_performed": false
+}

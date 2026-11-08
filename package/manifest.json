@@ -1,0 +1,75 @@
+{
+  "FormatVersion": 1,
+  "Version": "010",
+  "Files": [
+    {
+      "Name": "a.arc",
+      "ResourceName": "AC0_PTBR.a.arc",
+      "Sha256": "2c70265e4cd341a543e1b763eb47209042777840204abf656e25c7b858328728",
+      "Length": 503289520
+    },
+    {
+      "Name": "d.arc",
+      "ResourceName": "AC0_PTBR.d.arc",
+      "Sha256": "b63cd15db58416055ed728e7f5d6039d57d33ebf1aeb9839e6e033dbb21b12d1",
+      "Length": 25933952
+    }
+  ],
+  "AllowedStates": [
+    {
+      "Name": "original",
+      "ASha256": "82c05ed08ca584b551776f916ba06e9bfd21c01e0cfede8afe6ffbd276745f80",
+      "DSha256": "c28e41acdc6ba6699481169e168381234b920191f0189384fca751c04538d0e2"
+    },
+    {
+      "Name": "versao_010",
+      "ASha256": "2c70265e4cd341a543e1b763eb47209042777840204abf656e25c7b858328728",
+      "DSha256": "b63cd15db58416055ed728e7f5d6039d57d33ebf1aeb9839e6e033dbb21b12d1"
+    },
+    {
+      "Name": "versao_009",
+      "ASha256": "63a6841bbd1c331c58e7c2c3845a291ef941508cac73ae77f9ea1a9be40942b1",
+      "DSha256": "b63cd15db58416055ed728e7f5d6039d57d33ebf1aeb9839e6e033dbb21b12d1"
+    },
+    {
+      "Name": "versao_008",
+      "ASha256": "199db94718d2ebee21e2d347452b07431ee509cbf8f11a84ad2ae9e94cb86a64",
+      "DSha256": "b63cd15db58416055ed728e7f5d6039d57d33ebf1aeb9839e6e033dbb21b12d1"
+    },
+    {
+      "Name": "versao_007",
+      "ASha256": "199db94718d2ebee21e2d347452b07431ee509cbf8f11a84ad2ae9e94cb86a64",
+      "DSha256": "7bc40e6f14228c93934a4e495f275c61a6627065d4eddd06952cea4d2e1107d5"
+    },
+    {
+      "Name": "versao_006",
+      "ASha256": "b07b5b3a6745bd3f50f48e61502a282a2c83736f9500b703af8075f5c949a18a",
+      "DSha256": "7bc40e6f14228c93934a4e495f275c61a6627065d4eddd06952cea4d2e1107d5"
+    },
+    {
+      "Name": "versao_005",
+      "ASha256": "6e01ffa8ab8d6383048d5071c419bc25161b0a28bd92bc8a7ff88fc02aa600a9",
+      "DSha256": "7bc40e6f14228c93934a4e495f275c61a6627065d4eddd06952cea4d2e1107d5"
+    },
+    {
+      "Name": "versao_004",
+      "ASha256": "e863ba751d4940e875f1fbb3a01cf5ea88d4e99621accb9e7617c0b62e93f2b7",
+      "DSha256": "d371f6c74c727924f32b482ce0482e24fa70462ba983901333dac5e0fe6bc2f0"
+    },
+    {
+      "Name": "versao_003",
+      "ASha256": "8dd8a1411b5aac78e6505e505130662c27354156f69fb21aa311f0d7e72479ca",
+      "DSha256": "d371f6c74c727924f32b482ce0482e24fa70462ba983901333dac5e0fe6bc2f0"
+    },
+    {
+      "Name": "versao_002",
+      "ASha256": "c1b2ec423f7108ba572b17d9e5a9dd6c6a8c98682d1e770c17e1c456f1d39e50",
+      "DSha256": "d371f6c74c727924f32b482ce0482e24fa70462ba983901333dac5e0fe6bc2f0"
+    },
+    {
+      "Name": "versao_001",
+      "ASha256": "0010dcf4edd814807ddd5082a8aa2f9b18fbbca1bbba4eb0a98b7e8b77cd9008",
+      "DSha256": "ddc6d0fde7948009112819a8227521b20fba831bf1a2b5ac20a8643e9107db52"
+    }
+  ]
+}
