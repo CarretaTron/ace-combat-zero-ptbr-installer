@@ -1,6 +1,6 @@
 # Credits and third-party material
 
-Tradução por **Carreta**.
+Translation by **Carreta**.
 
 The installer was developed with AI coding assistance. The C# implementation is published here for inspection and rebuilding of the distributed installer.
 
