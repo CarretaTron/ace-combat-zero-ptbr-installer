@@ -1,63 +1,63 @@
-# Ace Combat Zero — instalador da tradução PT-BR
+# Ace Combat Zero — Brazilian Portuguese Translation Installer
 
-**Tradução por Carreta.** Código-fonte do instalador offline de Ace Combat Zero: The Belkan War, versão 010. Publicado para permitir a inspeção e a compilação do executável enviado ao Nexus Mods.
+**Translation by Carreta.** Source code for the offline installer of the Brazilian Portuguese translation of Ace Combat Zero: The Belkan War, version 010. Published to allow inspection and rebuilding of the executable submitted to Nexus Mods.
 
-Os seis arquivos de implementação em `src/`, o manifesto e as imagens são os mesmos usados no último instalador, **`AC0 PT-BR.exe`**, com os créditos no canto inferior esquerdo. A identidade do arquivo distribuído e os hashes dos fontes estão em [`provenance/release.json`](provenance/release.json).
+The six implementation files in `src/`, the application manifest and the artwork are the same files used in the latest **`AC0 PT-BR.exe`**, which displays the translation credit in the bottom-left corner. The distributed file's identity and original source hashes are recorded in [`provenance/release.json`](provenance/release.json).
 
 ```text
-Arquivo:  AC0 PT-BR.exe
-Tamanho:  530076672 bytes
+File:     AC0 PT-BR.exe
+Size:     530076672 bytes
 SHA-256:  3b1f91be236963001812f1e572c10a091395549d4812b47e97625901ef3f6715
 ```
 
-This repository contains the C# source of the offline Windows installer submitted to Nexus Mods. English build and review instructions are in [BUILDING.md](BUILDING.md) and [REVIEW.md](REVIEW.md).
+For moderation, see [BUILDING.md](BUILDING.md) for build instructions and [REVIEW.md](REVIEW.md) for a description of the installer's behavior. The installer interface remains in Brazilian Portuguese because it is intended for users of the translation.
 
-## O que o instalador faz
+## What the installer does
 
-- Permite selecionar a pasta `ACZero`, com `acz.exe`, `a.arc` e `d.arc`.
-- Verifica os arquivos ARC por SHA-256, o espaço livre e se o jogo está fechado.
-- Cria um backup dos dois ARC antes da substituição e registra a operação para recuperação em caso de falha.
-- Instala os ARC traduzidos que já estão dentro do executável. Não modifica `acz.exe` e não verifica sua versão por hash.
-- Exibe o resultado na janela principal e orienta a selecionar Inglês (US) no jogo.
+- Lets the user select the `ACZero` directory containing `acz.exe`, `a.arc` and `d.arc`.
+- Checks the ARC files using SHA-256, verifies available disk space and checks that the game is closed.
+- Backs up both ARC files before replacing them and records the operation for recovery if installation fails.
+- Installs the translated ARC files already embedded in the executable. It does not modify `acz.exe` or pin its version by hash.
+- Displays the result in the main window and tells the user to select English (US) in the game.
 
-O código não acessa a rede, não baixa programas, não cria serviços e não modifica o Registro do Windows. A janela de escolha de pasta usa a API do Windows. Veja a descrição do comportamento em [REVIEW.md](REVIEW.md).
+The code does not access the network, download programs, create services or modify the Windows Registry. The directory picker uses the Windows API. See [REVIEW.md](REVIEW.md) for details.
 
-## Compilar
+## Building
 
-Requisitos: Windows 64 bits, **Windows PowerShell 5.1** e o compilador do .NET Framework 4, normalmente presente em `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe`. Não precisa instalar NuGet ou outra biblioteca.
+Requirements: 64-bit Windows, **Windows PowerShell 5.1** and the .NET Framework 4 C# compiler, normally located at `C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe`. No NuGet packages or other external libraries are required.
 
-O repositório não inclui o jogo, os ARC ou o instalador de 505,5 MiB. Quem estiver revisando o arquivo distribuído pode fornecer uma cópia dele para recuperar somente os dois recursos de dados embutidos:
-
-```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -InstallerExe "C:\caminho\AC0 PT-BR.exe"
-```
-
-O script confere primeiro o SHA-256 do arquivo informado. Ele lê os recursos de dados pela API de assemblies do .NET sem chamar o ponto de entrada do instalador original. Depois, compila os fontes deste repositório e verifica os pacotes do novo executável. Saída: `dist\AC0 PT-BR.exe`.
-
-Como alternativa, forneça os dois ARC traduzidos da versão 010:
+This repository does not include the game, the ARC files or the 505.5 MiB installer. Reviewers who have the distributed installer can supply a copy to recover its two embedded data resources:
 
 ```powershell
-powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -PayloadDirectory "C:\caminho\pacotes-v010"
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -InstallerExe "C:\review\AC0 PT-BR.exe"
 ```
 
-Os hashes obrigatórios estão em [`package/manifest.json`](package/manifest.json). Usar os ARC originais do jogo nesse comando não funciona: o build requer os ARC já traduzidos.
+The script first verifies the supplied file's SHA-256. It reads the embedded data through the .NET assembly API without calling the original installer's entry point. It then compiles the source files in this repository and verifies the new executable's embedded payload. Output: `dist\AC0 PT-BR.exe`.
 
-Consulte [BUILDING.md](BUILDING.md) para os testes e detalhes da reconstrução. A nova compilação pode ter um SHA-256 diferente por causa dos identificadores e metadados gerados pelo compilador; o hash acima identifica o arquivo distribuído, não qualquer recompilação.
+Alternatively, supply the two already translated version 010 ARC files:
 
-## Estrutura
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\build.ps1 -PayloadDirectory "C:\review\payload-v010"
+```
 
-| Caminho | Conteúdo |
+The required hashes are recorded in [`package/manifest.json`](package/manifest.json). The build requires the translated ARC files; unmodified game ARC files will not pass this check.
+
+See [BUILDING.md](BUILDING.md) for tests and rebuilding details. A rebuilt executable may have a different SHA-256 because of compiler-generated identifiers and metadata. The hash above identifies the distributed file, not every subsequent build.
+
+## Repository layout
+
+| Path | Contents |
 | --- | --- |
-| `src/InstallerEngine.cs` | Validação, hashes, backup, instalação e recuperação |
-| `src/InstallerForm.cs` | Janela principal e créditos |
-| `src/InstallerDialogs.cs` | Campo com exemplo e diálogo de pasta inválida |
-| `src/FolderPicker.cs` | Seletor de pasta do Windows |
-| `src/BufferedControls.cs` | Controles com buffering |
-| `src/Program.cs` | Inicialização, verificação de pacote e prévias |
-| `assets/` | Ícone, título e fundo usados no instalador |
-| `tests/` | Testes com dados artificiais, sem exigir o jogo |
-| `package/manifest.json` | Hashes e estados ARC aceitos pela versão 010 |
+| `src/InstallerEngine.cs` | Validation, hashes, backup, installation and recovery |
+| `src/InstallerForm.cs` | Main window and translation credit |
+| `src/InstallerDialogs.cs` | Input placeholder and invalid-directory dialog |
+| `src/FolderPicker.cs` | Windows directory picker |
+| `src/BufferedControls.cs` | Buffered UI controls |
+| `src/Program.cs` | Startup, payload verification and previews |
+| `assets/` | Installer icon, title and background artwork |
+| `tests/` | Tests using synthetic data, without requiring the game |
+| `package/manifest.json` | Hashes and ARC states accepted by version 010 |
 
-## Créditos e direitos
+## Credits and rights
 
-Tradução e distribuição: **Carreta**. Veja [NOTICE.md](NOTICE.md). Este repositório publica o código do instalador; não contém o código-fonte de Ace Combat Zero nem os arquivos de dados do jogo.
+Translation and distribution: **Carreta**. See [NOTICE.md](NOTICE.md). This repository contains the installer source code; it does not contain the source code or data files of Ace Combat Zero.
